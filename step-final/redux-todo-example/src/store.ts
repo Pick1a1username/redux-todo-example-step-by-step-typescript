@@ -1,13 +1,17 @@
 import { combineReducers, createStore } from 'redux'
-import { todosReducer, State } from './reducers/todos'
+
+import { todosReducer, todosReducerState } from './reducers/todos'
+import { visibilityFilterReducer } from './reducers/visibilityFilter'
 
 export type AppState = {
-  state: State
+    todosReducer: todosReducerState,
+    visibilityFilterReducer: string
 }
 
 const store = createStore(
     combineReducers<AppState>({
-      state: todosReducer
+        todosReducer: todosReducer,
+        visibilityFilterReducer: visibilityFilterReducer
     })
 )
 

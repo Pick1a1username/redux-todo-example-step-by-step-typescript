@@ -1,5 +1,5 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
-import { addTodo, toggleTodo } from '../actions'
+import { addTodo } from '../actions'
 
 type Todo = {
     id: number,
@@ -9,11 +9,11 @@ type Todo = {
 
 let nextTodoId = 0
 
-export interface State extends Array<Todo> { }
+export interface todosReducerState extends Array<Todo> { }
 
-export const initialState: State = []
+export const todosReducerInitialState: todosReducerState = []
 
-export const todosReducer = reducerWithInitialState(initialState)
+export const todosReducer = reducerWithInitialState(todosReducerInitialState)
     .case(addTodo, (state, value ) => {
         return [
             ...state,
@@ -24,7 +24,4 @@ export const todosReducer = reducerWithInitialState(initialState)
             }
         ]   
     })
-    .case(toggleTodo, (state, id) => {
-        return state.map(todo =>
-            todo.id === id ? { ...todo, completed: !todo.completed } : todo)
-    })
+

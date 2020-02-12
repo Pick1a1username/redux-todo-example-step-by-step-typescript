@@ -15,3 +15,11 @@ const actionCreator = actionCreatorFactory()
 export const addTodo = actionCreator<string>('ADD_TODO')
 
 export const toggleTodo = actionCreator<number>('TOGGLE_TODO')
+
+export const setVisibilityFilter = actionCreator<string>('SET_VISIBILITY_FILTER')
+
+export const VisibilityFilters = {
+    SHOW_ALL: 'SHOW_ALL',
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
+  }

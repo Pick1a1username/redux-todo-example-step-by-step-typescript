@@ -13,7 +13,7 @@ export interface VisibleTodoListHandler {
 
 const mapStateToProps = (appState: AppState) => {
   return {
-    todos: appState.state
+    todos: appState.todosReducer
   }
 }
 
